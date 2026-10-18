@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Justin James Aspa | Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="cssportfolio.css">
+  <script>
+    /* Itakda ang theme bago mag-load ang page para walang flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) {}
+      if (!theme) {
+        theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main menu">
+      <a class="logo" href="#home">Justin Aspa</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">My Skills</a></li>
+        <li><a href="#projects">My Projects</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Palitan ang theme">Dark Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Hi, I'm Justin James Aspa.</h1>
+        <p>“Innovating with Code, Creating with Purpose, and Turning Ideas into Reality.”</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#contact">Hire Me</a>
+          <a class="btn btn-outline" href="#projects">Projects</a>
+        </div>
+      </div>
+      <img class="photo" src="imgnijustin.jpg" alt="">
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>Justin James Aspa is a 19-year-old Information Technology (IT) student who is passionate about technology and innovation.
+         He is interested in web development and coding, where he enjoys learning new programming skills and creating digital projects. His hobbies and interests include exploring new technologies, practicing coding, learning web design, and discovering new skills related to computers. He also enjoys activities that help improve his creativity, problem-solving, and technical abilities.</p>
+    </section>
+
+    <section id="skills">
+      <h2>My Skills</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Basic Computer Languages</li>
+        <li>Basic Html Websites</li>
+        <li>Python</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <img src="regform.png" alt="">
+          <h3>REGISTRATION FORM</h3>
+          <p>Using basic functions such as labels, textboxt, radio, checkbox and textarea and placeholders in textbox.</p>
+        </article>
+        <article class="project">
+          <img src="playlist.png" alt="">
+          <h3>PLAYLIST SYSTEM</h3>
+          <p>Using basic add, view, update, delete and search function.</p>
+        </article>
+        <article class="project">
+          <img src="login.png" alt="">
+          <h3>LOGIN PAGE</h3>
+          <p>Using basic html and css at the same time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <ul>
+    <li>
+      <a href="mailto:aspajustinjames@gmail.com">
+        <strong>Email</strong><span>aspajustinjames@gmail.com</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/teensqueak/">
+        <strong>Instagram</strong><span>Instagram.com/teensqueak</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/jasteen.09" target="_blank" rel="noopener noreferrer">
+        <strong>Facebook</strong><span>facebook.com/Justin Aspa</span>
+      </a>
+    </li>
+  </ul>
+</section>
+  </main>
+
+  <footer>&copy; 2026 Justin James Aspa</footer>
+
+  <script>
+    var root = document.documentElement;
+    var toggle = document.getElementById("theme-toggle");
+
+    function updateButton() {
+      var isDark = root.getAttribute("data-theme") === "dark";
+      /* Ipinapakita ang theme na pupuntahan kapag pinindot */
+      toggle.textContent = isDark ? "Light Theme" : "Dark Theme";
+    }
+
+    toggle.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      updateButton();
+    });
+
+    updateButton();
+  </script>
+</body>
+</html>
