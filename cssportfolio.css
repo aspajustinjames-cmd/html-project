@@ -243,6 +243,7 @@ h2 { font-size: 2rem; }
 .about p { max-width: 62ch; }
 
 /* ===== Skills ===== */
+/* ===== Skills ===== */
 .skills {
   list-style: none;
   padding: 0;
@@ -258,7 +259,24 @@ h2 { font-size: 2rem; }
   padding: 8px 18px;
   border-radius: 999px;
   font-weight: 600;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+  transition: background-color 0.3s ease, color 0.3s ease,
+              border-color 0.3s ease, transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Hover: pill lifts up, fills with the accent color, and gets a soft shadow */
+.skills li:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.skills li:active {
+  transform: translateY(-1px);
+  box-shadow: none;
 }
 
 /* ===== Projects ===== */
